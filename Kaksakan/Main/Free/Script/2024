@@ -18,6 +18,12 @@ Section:NewButton("Safe Place", "Click to teleport to a Safe Place", function()
     game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(307.000061, 209.199997, -28.4000034, 1, 0, 0, 0, 1, 0, 0, 0, 1)
 end)
 
+Section:NewButton("Collect All Coins", "ButtonInfo", function()
+    for i, v in game:GetService("Workspace").GameObjects:GetChildren() do
+        v.Position = game.Players.LocalPlayer.Character.HumanoidRootPart.Position
+        end
+end)
+
 local plrs = {}
 for _, v in pairs(game.Players:GetPlayers()) do
     table.insert(plrs, v.Name)
